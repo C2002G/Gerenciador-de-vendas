@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Carro</title>
+</head>
+<body>
+    <h1>Cadastrar Novo Carro</h1>
+    <form method="post">
+        <input type="text" name="placa" placeholder="Placa" required><br>
+        <input type="text" name="renavan" placeholder="Renavan" required><br>
+        <input type="text" name="cor" placeholder="Cor" required><br>
+        <input type="number" name="valor_fip" placeholder="Valor FIP" required><br>
+        <input type="number" name="valor_compra" placeholder="Valor de Compra" required><br>
+        <input type="number" name="despesas" placeholder="Despesas" required><br>
+        <input type="text" name="local_compra" placeholder="Onde foi comprado" required><br>
+        <input type="text" name="vendedor" placeholder="Com quem foi comprado" required><br>
+        <input type="text" name="telefone_vendedor" placeholder="Telefone do vendedor" required><br>
+        <input type="text" name="venda" placeholder="Venda" required><br>
+        <input type="text" name="comprador" placeholder="Pra quem foi vendido" required><br>
+        <input type="number" name="valor_venda" placeholder="Por quanto foi vendido" required><br>
+        <input type="text" name="tipo_venda" placeholder="Como foi vendido (troca ou não)" required><br>
+        <input type="text" name="cliente_nome" placeholder="Nome do Cliente" required><br>
+        <input type="text" name="cliente_cpf" placeholder="CPF do Cliente" required><br>
+        <input type="text" name="cliente_endereco" placeholder="Endereço do Cliente" required><br>
+        <button type="submit">Registrar Carro</button>
+    </form>
+    <a href="{{ url_for('index') }}">Voltar</a>
+</body>
+</html>
