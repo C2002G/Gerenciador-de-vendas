@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carros</title>
+    <style>
+        .dut-button {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+        .dut-pending {
+            background-color: #ff4444;
+            color: white;
+        }
+        .dut-ok {
+            background-color: #4CAF50;
+            color: white;
+        }
+        li {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Carros</h1>
+    <ul>
+        {% for carro in carros %}
+            <li>
+                <a href="{{ url_for('detalhes_carro', placa=carro['placa']) }}">
+                    {{ carro['placa'] }} - {{ carro['comprador'] }}
+                </a>
+                <br>
+                <button 
+                    onclick="toggleDut('{{ carro['placa'] }}')" 
+                    class="dut-button {{ 'dut-ok' if carro.get('dut_ok') else 'dut-pending' }}"
+                    id="dut-{{ carro['placa'] }}"
+                >
+                    O DUT está OK?
+                </button>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('cadastrar') }}">Cadastrar Novo Carro</a>
+
+    <script>
+        function toggleDut(placa) {
+            fetch(`/toggle_dut/${placa}`, {
+                method: 'POST',
+            })
+            .then(response => response.json())
+            .then(data => {
+                const button = document.getElementById(`dut-${placa}`);
+                if (data.dut_ok) {
+                    button.classList.remove('dut-pending');
+                    button.classList.add('dut-ok');
+                } else {
+                    button.classList.remove('dut-ok');
+                    button.classList.add('dut-pending');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

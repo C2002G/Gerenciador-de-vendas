@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Carro</title>
+</head>
+<body>
+    <h1>Detalhes do Carro</h1>
+    <div>
+        <p><strong>Placa:</strong> {{ carro.placa }}</p>
+        <p><strong>Renavan:</strong> {{ carro.renavan }}</p>
+        <p><strong>Cor:</strong> {{ carro.cor }}</p>
+        <p><strong>Valor FIP:</strong> R$ {{ carro.valor_fip }}</p>
+        <p><strong>Valor de Compra:</strong> R$ {{ carro.valor_compra }}</p>
+        <p><strong>Despesas:</strong> R$ {{ carro.despesas }}</p>
+        <p><strong>Local de Compra:</strong> {{ carro.local_compra }}</p>
+        <p><strong>Vendedor:</strong> {{ carro.vendedor }}</p>
+        <p><strong>Telefone do Vendedor:</strong> {{ carro.telefone_vendedor }}</p>
+        <p><strong>Venda:</strong> {{ carro.venda }}</p>
+        <p><strong>Comprador:</strong> {{ carro.comprador }}</p>
+        <p><strong>Valor de Venda:</strong> R$ {{ carro.valor_venda }}</p>
+        <p><strong>Tipo de Venda:</strong> {{ carro.tipo_venda }}</p>
+        <p><strong>Nome do Cliente:</strong> {{ carro.cliente_nome }}</p>
+        <p><strong>CPF do Cliente:</strong> {{ carro.cliente_cpf }}</p>
+        <p><strong>Endereço do Cliente:</strong> {{ carro.cliente_endereco }}</p>
+    </div>
+    <div>
+        <a href="{{ url_for('editar_carro', placa=carro.placa) }}">Editar</a>
+        <form method="POST" action="{{ url_for('apagar_carro', placa=carro.placa) }}" style="display: inline;">
+            <button type="submit" onclick="return confirm('Tem certeza que deseja apagar este carro?')">Apagar</button>
+        </form>
+        <a href="{{ url_for('index') }}">Voltar</a>
+    </div>
+</body>
+</html>
