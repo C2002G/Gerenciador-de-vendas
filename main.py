@@ -21,6 +21,8 @@ def criar_tabela():
             cursor = conn.cursor()
             cursor.execute('''
                 CREATE TABLE IF NOT EXISTS carros (
+                    modelo TEXT,
+                    ano INTEGER,
                     placa TEXT PRIMARY KEY,
                     renavan TEXT,
                     cor TEXT,

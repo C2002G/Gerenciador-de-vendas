@@ -24,6 +24,8 @@
         <p><strong>Nome do Cliente:</strong> {{ carro.cliente_nome }}</p>
         <p><strong>CPF do Cliente:</strong> {{ carro.cliente_cpf }}</p>
         <p><strong>Endereço do Cliente:</strong> {{ carro.cliente_endereco }}</p>
+        <p><strong>Modelo:</strong> {{ carro.modelo }}</p>
+        <p><strong>Ano:</strong> {{ carro.ano }}</p>
     </div>
     <div>
         <a href="{{ url_for('editar_carro', placa=carro.placa) }}">Editar</a>
