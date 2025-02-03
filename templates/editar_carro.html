@@ -7,25 +7,43 @@
 </head>
 <body>
     <h1>Editar Carro</h1>
-    <form method="post">
-        <input type="text" name="placa" placeholder="Placa" value="{{ carro.placa }}" required><br>
-        <input type="text" name="renavan" placeholder="Renavan" value="{{ carro.renavan }}" required><br>
-        <input type="text" name="cor" placeholder="Cor" value="{{ carro.cor }}" required><br>
-        <input type="number" name="valor_fip" placeholder="Valor FIP" value="{{ carro.valor_fip }}" required><br>
-        <input type="number" name="valor_compra" placeholder="Valor de Compra" value="{{ carro.valor_compra }}" required><br>
-        <input type="number" name="despesas" placeholder="Despesas" value="{{ carro.despesas }}" required><br>
-        <input type="text" name="local_compra" placeholder="Onde foi comprado" value="{{ carro.local_compra }}" required><br>
-        <input type="text" name="vendedor" placeholder="Com quem foi comprado" value="{{ carro.vendedor }}" required><br>
-        <input type="text" name="telefone_vendedor" placeholder="Telefone do vendedor" value="{{ carro.telefone_vendedor }}" required><br>
-        <input type="text" name="venda" placeholder="Venda" value="{{ carro.venda }}" required><br>
-        <input type="text" name="comprador" placeholder="Pra quem foi vendido" value="{{ carro.comprador }}" required><br>
-        <input type="number" name="valor_venda" placeholder="Por quanto foi vendido" value="{{ carro.valor_venda }}" required><br>
-        <input type="text" name="tipo_venda" placeholder="Como foi vendido (troca ou não)" value="{{ carro.tipo_venda }}" required><br>
-        <input type="text" name="cliente_nome" placeholder="Nome do Cliente" value="{{ carro.cliente_nome }}" required><br>
-        <input type="text" name="cliente_cpf" placeholder="CPF do Cliente" value="{{ carro.cliente_cpf }}" required><br>
-        <input type="text" name="cliente_endereco" placeholder="Endereço do Cliente" value="{{ carro.cliente_endereco }}" required><br>
-        <button type="submit">Salvar Alterações</button>
-    </form>
-    <a href="{{ url_for('detalhes_carro', placa=carro.placa) }}">Cancelar</a>
+        <div class="form-group">
+            <form method="post">
+                <label for="placa">Placa</label>
+                <input type="text" name="placa" placeholder="Placa" value="{{ carro.placa }}" required><br>
+                <label for="Renavan">Renavan</label>
+                <input type="text" name="renavan" placeholder="Renavan" value="{{ carro.renavan }}" required><br>
+                <label for="Cor">Cor</label>
+                <input type="text" name="cor" placeholder="Cor" value="{{ carro.cor }}" required><br>
+                <label for="Valor FIP">Valor FIP</label>
+                <input type="number" name="valor_fip" placeholder="Valor FIP" value="{{ carro.valor_fip }}" required><br>
+                <label for="Valor de Compra">Valor de Compra</label>
+                <input type="number" name="valor_compra" placeholder="Valor de Compra" value="{{ carro.valor_compra }}" required><br>
+                <label for="Despesas">Despesas</label>
+                <input type="number" name="despesas" placeholder="Despesas" value="{{ carro.despesas }}" required><br>
+                <label for="Onde foi comprado">Onde foi comprado</label>
+                <input type="text" name="local_compra" placeholder="Onde foi comprado" value="{{ carro.local_compra }}" required><br>
+                <label for="Com quem foi comprado">Com quem foi comprado</label>
+                <input type="text" name="vendedor" placeholder="Com quem foi comprado" value="{{ carro.vendedor }}" required><br>
+                <label for="Telefone do vendedor">Telefone do vendedor</label>
+                <input type="text" name="telefone_vendedor" placeholder="Telefone do vendedor" value="{{ carro.telefone_vendedor }}" required><br>
+                <label for="Venda">Venda</label>
+                <input type="text" name="venda" placeholder="Venda" value="{{ carro.venda }}" required><br>
+                <label for="Pra quem foi vendido">Pra quem foi vendido</label>
+                <input type="text" name="comprador" placeholder="Pra quem foi vendido" value="{{ carro.comprador }}" required><br>
+                <label for="Por quanto foi vendido">Por quanto foi vendido</label>
+                <input type="number" name="valor_venda" placeholder="Por quanto foi vendido" value="{{ carro.valor_venda }}" required><br>
+                <label for="Como foi vendido">Como foi vendido</label>
+                <input type="text" name="tipo_venda" placeholder="Como foi vendido (troca ou não)" value="{{ carro.tipo_venda }}" required><br>
+                <label for="Nome do Cliente">Nome do Cliente</label>
+                <input type="text" name="cliente_nome" placeholder="Nome do Cliente" value="{{ carro.cliente_nome }}" required><br>
+                <label for="CPF do cliente">CPF do cliente</label>
+                <input type="text" name="cliente_cpf" placeholder="CPF do Cliente" value="{{ carro.cliente_cpf }}" required><br>
+                <label for="Endereço do cliente">Endereço do cliente</label>
+                <input type="text" name="cliente_endereco" placeholder="Endereço do Cliente" value="{{ carro.cliente_endereco }}" required><br>
+                <button type="submit">Salvar Alterações</button>
+            </form>
+            <a href="{{ url_for('detalhes_carro', placa=carro.placa) }}">Cancelar</a>
+        </div>
 </body>
 </html>
